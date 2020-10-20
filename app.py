@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, g, redirect
+from flask import Flask, render_template, request, g, redirect, url_for
 import sqlite3
+from flask_bootstrap import Bootstrap
 
 #conn = sqlite3.connect('CRUD.db')
 
 app = Flask(__name__)
+Bootstrap(app)
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -34,7 +36,7 @@ def home():
 			{'idnum': idnum, 'name': name, 'course': course, 'year_level': yearlv})
 		get_db().commit()
 		get_db().close()
-		return '<h1>Task Successful<h1> type /List_page to see the list'
+		return redirect('/List_page')
 	return render_template('index.html')
 
 @app.route('/List_page')

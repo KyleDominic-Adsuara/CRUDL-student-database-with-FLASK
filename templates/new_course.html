@@ -1,11 +1,21 @@
-<h2>NEW COURSE FOR ACCOUNT</h2>
-<form method="POST" action=" ">
-	Enter student ID number: <input type="text" name="idnum">
-	<br>
-	Enter new course : <input type="text" name="new">
-	<br>
-	<input type="submit" name="Update">
-</form>
-<form action='/List_page'>
-	<button type="submit">go back to student list</button>
-</form>
+{% extends "layout.html" %}
+{% block body %}
+<div class="container-fluid">
+	<div class="row">
+		<nav class="navbar navbar-expand-lg navbar-inverse bg-primary">
+ 			<a class="navbar-brand" href="/List_page">Student database</a>
+ 			<a class="navbar-brand" href="/">Create a student acc</a>
+   		</nav>
+   	</div>
+	<div class = "row">
+		<h2 style="text-align:center;">NEW COURSE FOR ACCOUNT</h2>
+		<form align="center" method="POST" action=" ">
+			Enter student ID number : <input type="text" name="idnum">
+			<br>
+			Enter new student course:<input type="text" name="new">
+			<br>
+			<input type="submit" name="Update">
+		</form>
+	</div>
+</div>
+{% endblock %}

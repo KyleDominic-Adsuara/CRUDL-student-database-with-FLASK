@@ -1,15 +1,32 @@
-<h1>INPUT STUDENT DETAILS</h1>
-<form method="POST" action="">
-	IDnum:<input type="text" name="idnum" />
-	<br>
-	Name :<input type="text" name="name" />
-	<br>	
-	YrLvl:<input type="text" name="yearlv" />
-	<br>
-	Course:<input type="text" name="course" />
-	<br>
-	<input type="submit">	
-</form>
-<form action='/List_page'>
-	<button type="submit">go to student list</button>
-</form>
+{% extends "layout.html" %}
+{% block body %}
+<div class="container-fluid">
+	<div class="row">
+		<nav class="navbar navbar-expand-lg navbar-inverse bg-primary">
+ 			<a class="navbar-brand" href="/List_page">Student database</a>
+ 			<a class="navbar-brand" href="/">Create a student acc</a>
+   		</nav>
+   	</div>
+	<div class = "row">
+		<h1 style="text-align:center;">INPUT STUDENT DETAILS</h1>
+		<div class="vertical-center">
+			<form align="center" method="POST" action="" style="text-align: justify-all;">
+				ID num:<input type="text" name="idnum" />
+				<br>
+				Name : <input type="text" name="name" />
+				<br>	
+				Year Lv:<input type="text" name="yearlv" />
+				<br>
+				Course:<input type="text" name="course" />
+				<br>
+				<input type="submit">	
+			</form>
+		</div>
+	</div>
+	<div>
+		<form align="center" action='/List_page'>
+			<button type="submit">go to student list</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
